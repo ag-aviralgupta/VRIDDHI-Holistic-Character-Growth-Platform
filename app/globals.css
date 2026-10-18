@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Fredoka:wght@500;600;700&family=Space+Grotesk:wght@500;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-doodle: 'Outfit', 'Fredoka', system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background-color: #FFFDF7;
+  color: #0F172A;
+  font-family: var(--font-doodle);
+  background-image: 
+    radial-gradient(#CBD5E1 1.5px, transparent 1.5px),
+    radial-gradient(#CBD5E1 1.5px, #FFFDF7 1.5px);
+  background-size: 32px 32px;
+  background-position: 0 0, 16px 16px;
+  -webkit-font-smoothing: antialiased;
+}
+
+button, input, textarea {
+  font-family: inherit;
+}
+
+::selection {
+  background: #FFD12E;
+  color: #0F172A;
+}
+
+.doodle-card {
+  background: #FFFFFF;
+  border: 3px solid #0F172A;
+  border-radius: 1.25rem;
+  box-shadow: 4px 4px 0px #0F172A;
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.doodle-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 6px 6px 0px #0F172A;
+}
+
+.doodle-card-static {
+  background: #FFFFFF;
+  border: 3px solid #0F172A;
+  border-radius: 1.25rem;
+  box-shadow: 4px 4px 0px #0F172A;
+}
+
+.doodle-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  border: 3px solid #0F172A;
+  border-radius: 0.875rem;
+  box-shadow: 3px 3px 0px #0F172A;
+  transition: all 0.1s ease;
+  cursor: pointer;
+  user-select: none;
+}
+
+.doodle-btn:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 5px 5px 0px #0F172A;
+}
+
+.doodle-btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0px #0F172A;
+}
+
+.doodle-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-weight: 800;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.25rem 0.65rem;
+  border: 2px solid #0F172A;
+  border-radius: 9999px;
+  box-shadow: 2px 2px 0px #0F172A;
+}
+
+.doodle-tag {
+  display: inline-flex;
+  align-items: center;
+  font-weight: 700;
+  font-size: 0.7rem;
+  padding: 0.2rem 0.5rem;
+  border: 2px solid #0F172A;
+  border-radius: 0.5rem;
+  box-shadow: 1.5px 1.5px 0px #0F172A;
+}
+
+@keyframes doodle-bob {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-6px) rotate(1deg); }
+}
+
+@keyframes doodle-pulse-eye {
+  0%, 90%, 100% { transform: scaleY(1); }
+  95% { transform: scaleY(0.1); }
+}
+
+.animate-doodle-bob {
+  animation: doodle-bob 3.5s ease-in-out infinite;
+}
+
+.animate-doodle-bob-slow {
+  animation: doodle-bob 5s ease-in-out infinite;
+}
+
+.animate-doodle-blink {
+  animation: doodle-pulse-eye 4s infinite;
+  transform-origin: center;
+}
+
+.comic-bubble {
+  position: relative;
+  background: #FFFFFF;
+  border: 3px solid #0F172A;
+  border-radius: 1.25rem;
+  box-shadow: 4px 4px 0px #0F172A;
+}
+
+.comic-bubble::after {
+  content: '';
+  position: absolute;
+  bottom: -14px;
+  left: 28px;
+  border-width: 14px 12px 0 0;
+  border-style: solid;
+  border-color: #0F172A transparent transparent transparent;
+  display: block;
+  width: 0;
+}
+
+.comic-bubble::before {
+  content: '';
+  position: absolute;
+  bottom: -9px;
+  left: 31px;
+  border-width: 10px 8px 0 0;
+  border-style: solid;
+  border-color: #FFFFFF transparent transparent transparent;
+  display: block;
+  width: 0;
+  z-index: 1;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #F8F6F0;
+  border-left: 2px solid #0F172A;
+}
+::-webkit-scrollbar-thumb {
+  background: #FFD12E;
+  border: 2px solid #0F172A;
+  border-radius: 6px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #FF6584;
+}
